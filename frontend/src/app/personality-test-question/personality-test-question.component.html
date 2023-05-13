@@ -1,0 +1,13 @@
+<div [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{question.text}}</mat-card-title>
+      <mat-card-subtitle><div class="errorMessage" *ngIf="!isValid">Select an answer, please</div></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-radio-group class="question-answer-group" [id]="question.id" [formControlName]="question.id">
+        <mat-radio-button class="question-answer" *ngFor="let answer of question.answers" [value]="answer.personalitySign">{{answer.text}}</mat-radio-button>
+      </mat-radio-group>
+    </mat-card-content>
+  </mat-card>
+</div>
